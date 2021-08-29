@@ -168,7 +168,7 @@ person.calcAge();
 // 'this' 는 person을 가리킨다. calcAge 함수가 person 오브젝트에 의해 호출되었기 때문이다.
 const calculateAge = person.calcAge;
 calculateAge();
-// 'this' 는 글로벌 윈도우 오브젝트를 가리킨다. 아무런 오브젝트가 주어지지 않았기 때문.
+// 'this' 는 글로벌 윈도우 오브젝트를 가리킨다. 함수가 실행될 때(Lexical Environment 생성 -> Environment Record 생성 시점에)  아무런 오브젝트가 주어지지 않았기 때문.
 
 ```
 
@@ -332,13 +332,15 @@ VariableEnvironment: {
 * 따라서 글로벌 lexical environment 가 업데이트된다.
 * 이후 글로벌 코드가 끝나고 프로그램이 종료된다.
 
-> `let` 과 `const`는 생성 단계에서 아무런 값도 갖지 않는(초기화되지 않은) 반면,
-> `var` 는 `undefined`로 초기화된다는 점에 주목할 필요가 있다.
->  또 함수 선언은 중괄호 블록까지 environment에 저장된다.
-
+## 호이스팅
+* `let` 과 `const`는 생성 단계의 Lexcial Environment에서 아무런 값도 갖지 않는(초기화되지 않은) 반면,
+* `var` 는 생성단계의 Variable Environment에서 `undefined`로 초기화된다는 점에 주목할 필요가 있다.
 * 이것이 바로 `var`로 선언한 변수는 선언 이전에도 접근할 수 있는 이유이다. (`undefined`로 뜨긴 하지만)
 * 반대로 `let`과 `const`는 참조 에러가 뜨는 것과도 연관있다.
+* 또 생성 단계에서, 함수는 몸체인 중괄호 블록까지 environment에 저장된다.
 * 이것이 바로 **호이스팅** 이다.
+
+
 
 
 
