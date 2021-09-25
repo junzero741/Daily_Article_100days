@@ -1,4 +1,5 @@
-21번째 
+21번째 글
+
 링크 : https://betterprogramming.pub/10-modern-javascript-tricks-every-developer-should-use-377857311d79
 
 
