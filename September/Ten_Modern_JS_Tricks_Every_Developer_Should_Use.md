@@ -1,3 +1,4 @@
+21번째 
 링크 : https://betterprogramming.pub/10-modern-javascript-tricks-every-developer-should-use-377857311d79
 
 
